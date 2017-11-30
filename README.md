@@ -2,13 +2,13 @@
 
 Python 3 supported.
 
-This script checks availability of AWS EC2 instances in Zabbix, and if they do not exist in the default AWS region (because of termination for ex.), they will be removed from Zabbix.
+This script checks availability of AWS EC2 instances in Zabbix, and if they do not exist in default AWS region (because of termination for ex.), they will be removed from Zabbix.
 
 Script runs periodically with $TIMEOUT, which you can set as environment variable.
 
 ## Environment variables
 
-Set this environment variables inside the docker container or on the host, if you would like to run it directly. Zabbix API user should have read/write permissions.
+Set these environment variables inside the docker container or on the host, if you would like to run it directly. Zabbix API user should have read/write permissions.
 
 ```yaml
      - ZABBIX_USER=<zabbix_api_user>
