@@ -32,3 +32,34 @@ docker-compose up -d
 ```sh
 docker logs -f ec2-cleaner
 ```
+
+## Run it in Jenkins
+
+
+Add String and Password Parameters into the Job (environment variables).
+
+Add Git Source Code Management:
+
+Repository URL: https://github.com/vensder/remove-ec2-from-zabbix.git
+
+Add build step "Execute shell" in Jenkins job:
+
+```sh
+#!/usr/bin/env bash
+
+set -e
+
+python3 --version
+virtualenv --version
+
+PATH=$WORKSPACE/env3/bin:/usr/local/bin:$PATH
+if [ ! -d "env3" ]; then
+        virtualenv -p python3 env3
+fi
+. env3/bin/activate
+pip install -r requirements.txt --download-cache=/tmp/$JOB_NAME
+python --version
+python remove_terminated_instances.py
+```
+
+Python 3 and vitrualenv should be installed on the host.
