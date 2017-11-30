@@ -2,6 +2,7 @@ version: '2'
 services:
   cleaner:
     image: vensder/remove-ec2-from-zabbix
+    container_name: ec2-cleaner
     environment:
      - ZABBIX_USER=<zabbix_api_user>
      - ZABBIX_PASSWORD=<zabbix_api_password>
