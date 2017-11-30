@@ -2,7 +2,7 @@
 
 Python 3 supported.
 
-This script check availability of AWS EC2 instances in Zabbix, and if they not exist in the default AWS region (because of termination for ex.), they will be removed from Zabbix.
+This script checks availability of AWS EC2 instances in Zabbix, and if they does not exist in the default AWS region (because of termination for ex.), they will be removed from Zabbix.
 
 Script runs periodically with $TIMEOUT, which you can set as environment variable.
 
