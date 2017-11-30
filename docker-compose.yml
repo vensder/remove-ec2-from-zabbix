@@ -1,0 +1,14 @@
+version: '2'
+services:
+  cleaner:
+    image: vensder/remove-ec2-from-zabbix
+    environment:
+     - ZABBIX_USER=<zabbix_api_user>
+     - ZABBIX_PASSWORD=<zabbix_api_password>
+     - ZABBIX_URL=https://<url_or_ip>
+     - AWS_ACCESS_KEY_ID=<access_id>
+     - AWS_SECRET_ACCESS_KEY=<access_key>
+     - AWS_DEFAULT_REGION=us-west-2
+     - TIMEOUT=30
+     - PYTHONUNBUFFERED=1
+
